@@ -1,0 +1,13 @@
+name = "musicbrainz"
+type = 'webpack'
+account_id = ''
+route = ''
+zone_id = ''
+usage_model = ''
+workers_dev = true
+
+[build]
+command = "npm install && npm run build"
+
+[build.upload]
+format = "service-worker"

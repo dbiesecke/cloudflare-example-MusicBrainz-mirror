@@ -5,8 +5,13 @@
 
 * host can change to other & fit your needs
 
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/dbiesecke/cloudflare-example-MusicBrainz-mirror
 
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/dbiesecke/cloudflare-example-MusicBrainz-mirror)
+
+
+## Example
+
+ * [musicbrainz.bcgd1.workers.dev](https://musicbrainz.bcgd1.workers.dev)
 
 
 ## Build and Deploy

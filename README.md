@@ -5,6 +5,9 @@
 
 * host can change to other & fit your needs
 
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/dbiesecke/cloudflare-example-MusicBrainz-mirror
+
+
 
 ## Build and Deploy
 
@@ -14,10 +17,10 @@
 npm install -g @cloudflare/wrangler
 ```
 
-- Generate from [rocket-booster-template](https://github.com/booster-labs/rocket-booster-template)
+- Generate from [cloudflare-example-MusicBrainz-mirror](https://github.com/dbiesecke/cloudflare-example-MusicBrainz-mirror)
 
 ```sh
-wrangler generate booster https://github.com/booster-labs/rocket-booster-template
+wrangler generate booster https://github.com/dbiesecke/cloudflare-example-MusicBrainz-mirror
 ```
 
 - Install dependencies
@@ -50,4 +53,4 @@ wrangler publish
 
 :rocket: The template to kickstart rocket-booster workers. The `src/index.js` file contains the code and configuration of the template. Documentation and examples for `rocket-booster` can be found [here](https://github.com/booster-labs/rocket-booster).
 
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/booster-labs/rocket-booster-template)
+)

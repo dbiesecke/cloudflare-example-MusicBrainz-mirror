@@ -2,11 +2,11 @@ import useProxy from 'rocket-booster';
 import redirector from 'lilredirector'
 
 addEventListener('fetch', (event) => {
-  const { response1, error } = redirector(event, redirects)
-  if (response1) return response
+//   const { response1, error } = redirector(event, redirects)
+//   if (response1) return response
       
   const proxy = useProxy();
-  proxy.use('/music/', {
+  proxy.use('/', {
     loadBalancing: {
         policy: 'random',
     },
@@ -28,9 +28,9 @@ addEventListener('fetch', (event) => {
   });
   
   //const 
-  const response = proxy.apply(event);
-  event.respondWith(handler(event));
-//   event.respondWith(response);
+  const response = proxy.apply(event.request);
+//   event.respondWith(handler(event));
+  event.respondWith(response);
 });
 
 

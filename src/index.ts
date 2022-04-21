@@ -1,8 +1,12 @@
 import useProxy from 'rocket-booster';
+import redirector from 'lilredirector'
 
 addEventListener('fetch', (event) => {
+  const { response1, error } = redirector(event, redirects)
+  if (response1) return response
+      
   const proxy = useProxy();
-  proxy.use('/', {
+  proxy.use('/music/', {
     loadBalancing: {
         policy: 'random',
     },
@@ -22,6 +26,36 @@ addEventListener('fetch', (event) => {
         }
     ],
   });
-  const response = proxy.apply(event.request);
-  event.respondWith(response);
+  
+  //const 
+  const response = proxy.apply(event);
+  event.respondWith(handler(event));
+//   event.respondWith(response);
 });
+
+
+
+const redirects = [
+  {
+    path: "/twitter",
+    redirect: "https://twitter.com/signalnerve",
+  },
+  {
+    path: "/yt",
+    redirect: "https://www.youtube.com/c/bytesizedxyz",
+  },
+]
+
+
+//const ORIGIN = "home.forward.pw"
+async function handler(event) {
+  const { response, error } = await redirector(event, redirects)
+  if (response) return response
+
+
+// const { request, error }
+  // Optionally, return an error response
+  if (error) return error
+
+  // Other workers code
+}

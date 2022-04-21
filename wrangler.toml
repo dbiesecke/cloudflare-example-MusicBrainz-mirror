@@ -1,10 +1,14 @@
-name = "musicbrainz"
+name = "proxy"
 type = 'webpack'
-account_id = ''
+account_id = '7d42f6d7d6839c9e3c607b7188427e67'
 route = ''
 zone_id = ''
 usage_model = ''
 workers_dev = true
+
+kv_namespaces = [ 
+         { binding = "REDIRECTS", id = "ce85562494f040b4821f39fcf7489219" }
+]
 
 [build]
 command = "npm install && npm run build"

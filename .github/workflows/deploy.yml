@@ -19,13 +19,6 @@ jobs:
           
       - name: Install dependencies
         run: npm install
-
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            **/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
           
       - name: Publish
         uses: cloudflare/wrangler-action@1.2.0

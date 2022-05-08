@@ -1,0 +1,21 @@
+
+name = "proxy"
+type = 'webpack'
+account_id = '7d42f6d7d6839c9e3c607b7188427e67'
+route = ''
+zone_id = ''
+usage_model = ''
+workers_dev = true
+#workers_dev = true
+compatibility_date = "2022-04-18"
+#webpack_config = "webpack.config.js"
+kv_namespaces = [
+  { binding = "REDIRECTS", id = "7c1f3ce5cac3490aa94a86698fd331bb", preview_id = "3b225db7e6b04c0593bce2eed11ff1e2" }
+]
+
+[build]
+command = "npm install && npm run build"
+
+[build.upload]
+format = "service-worker"
+

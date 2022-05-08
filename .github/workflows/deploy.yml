@@ -16,6 +16,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "16"
+          
+      - name: Install dependencies
+        run: npm install
 
       - name: Cache dependencies
         uses: actions/cache@v2
@@ -23,10 +26,7 @@ jobs:
           path: |
             **/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-
-      - name: Install dependencies
-        run: npm install
-
+          
       - name: Publish
         uses: cloudflare/wrangler-action@1.2.0
         with:

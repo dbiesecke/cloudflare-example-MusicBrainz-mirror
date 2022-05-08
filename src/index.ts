@@ -1,12 +1,24 @@
 import useProxy from 'rocket-booster';
 import redirector from 'lilredirector'
 
+const redirects = [
+  {
+    path: "/twitter",
+    redirect: "https://twitter.com/signalnerve",
+  },
+  {
+    path: "/yt",
+    redirect: "https://www.youtube.com/c/bytesizedxyz",
+  },
+]
+
+
 addEventListener('fetch', (event) => {
-//   const { response1, error } = redirector(event, redirects)
-//   if (response1) return response
+  const { response1, error } = redirector(event, redirects)
+  if (response1) return response
       
   const proxy = useProxy();
-  proxy.use('/', {
+  proxy.use('/mb/', {
     loadBalancing: {
         policy: 'random',
     },
@@ -29,22 +41,12 @@ addEventListener('fetch', (event) => {
   
   //const 
   const response = proxy.apply(event.request);
-//   event.respondWith(handler(event));
-  event.respondWith(response);
+  event.respondWith(handler(event));
+//   event.respondWith(response);
 });
 
 
 
-const redirects = [
-  {
-    path: "/twitter",
-    redirect: "https://twitter.com/signalnerve",
-  },
-  {
-    path: "/yt",
-    redirect: "https://www.youtube.com/c/bytesizedxyz",
-  },
-]
 
 
 //const ORIGIN = "home.forward.pw"
